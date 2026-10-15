@@ -1,0 +1,65 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Status board</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0}
+body{width:1440px;height:900px;overflow:hidden;background:#f4f7fb;font:14px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif;color:#3d4c5e;display:grid;grid-template-columns:220px 1fr}
+h1,h2,h3{font-family:Montserrat,sans-serif;color:#1f3864}
+.rail{background:#1f3864;color:#c9d4e8;padding:22px 14px;display:flex;flex-direction:column;gap:4px}
+.logo{font:700 18px Montserrat;color:#fff;margin:0 8px 24px;display:flex;gap:10px;align-items:center}
+.logo b{background:#f0a821;color:#1f3864;border-radius:6px;padding:2px 7px}
+.rail a{padding:10px 12px;border-radius:8px}.rail a.on{background:#2c4a80;color:#fff}
+.rail .me{margin-top:auto;padding:12px;font-size:13px}
+main{padding:24px 28px;position:relative}
+.head{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.head h1{font-size:24px;margin-right:auto}
+.head input{border:1px solid #7f8ea5;border-radius:8px;padding:8px 12px;width:300px}
+.head select{border:1px solid #7f8ea5;border-radius:8px;padding:8px}
+.cols{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.col{background:#e8eef7;border-radius:12px;padding:12px;height:780px}
+.col h2{font-size:14px;display:flex;justify-content:space-between;margin:2px 4px 12px}
+.col h2 span{font:600 13px system-ui;color:#5a6a80}
+.c-open{border-top:4px solid #f0a821}.c-rev{border-top:4px solid #1f3864}.c-quo{border-top:4px solid #1b7f4b}.c-clo{border-top:4px solid #7f8ea5}
+.card{background:#fff;border-radius:10px;margin-bottom:10px;border:1px solid #e1e8f0}
+.card .t{padding:10px 12px}.card h3{font-size:14px}.card p{font-size:12.5px;color:#5a6a80}
+.card .s{border-top:2px dashed #cfd9e6;padding:7px 12px;display:flex;justify-content:space-between;font-size:12px}
+.mono{font-family:ui-monospace,monospace;color:#5a6a80}
+.late{color:#a8201a;font-weight:700}
+.card.sel{box-shadow:0 0 0 2px #1f3864}
+.sheet{position:absolute;top:0;right:0;width:440px;height:900px;background:#fff;border-left:1px solid #e1e8f0;box-shadow:-12px 0 32px rgba(31,56,100,.12);padding:28px}
+.sheet h2{font-size:22px;margin:6px 0}
+.btn{display:inline-block;border-radius:10px;padding:9px 14px;font:700 13px Montserrat;border:1px solid #1f3864;color:#1f3864;margin:14px 6px 0 0}
+.btn.pri{background:#f0a821;border-color:#f0a821}
+dl{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
+dt{font-size:12px;color:#5a6a80}dd{font-weight:600;color:#1f3864}
+.sel2{margin-top:22px;border:1px solid #7f8ea5;border-radius:8px;padding:10px;font-weight:600;color:#1f3864}
+.note{margin-top:18px;background:#f4f7fb;border-radius:10px;padding:12px;font-size:13px}
+</style></head><body>
+<aside class="rail"><div class="logo"><b>E7</b>Internal</div><a class="on">Requests</a><a>Overview</a><a>Team</a><div class="me">Anita Rao<br>Sign out</div></aside>
+<main>
+<div class="head"><h1>Requests</h1><input placeholder="Search name, place, reference"><select><option>All park types</option></select></div>
+<div class="cols">
+<section class="col c-open"><h2>Open <span>5</span></h2>
+<div class="card sel"><div class="t"><h3>Dinosaur / animatronic park</h3><p>Priya Nair · Ras Al Khaimah</p><p>AED 9,000,000</p></div><div class="s"><span class="mono">E7-20261009-2A6E18</span><span class="late">9 days</span></div></div>
+<div class="card"><div class="t"><h3>Water park</h3><p>Rohan Mehta · Pune</p><p>INR 25 Cr</p></div><div class="s"><span class="mono">E7-20261007-81C2D0</span><span class="late">8 days</span></div></div>
+<div class="card"><div class="t"><h3>Arcade / VR game zone</h3><p>Daniel Okafor · Lagos</p><p>USD 650,000</p></div><div class="s"><span class="mono">E7-20261013-0F33A1</span><span>2 days</span></div></div>
+<div class="card"><div class="t"><h3>Children's playground</h3><p>Meera Iyer · Coimbatore</p><p>INR 35 L</p></div><div class="s"><span class="mono">E7-20261015-77B0E4</span><span>3 hours</span></div></div>
+</section>
+<section class="col c-rev"><h2>In review <span>3</span></h2>
+<div class="card"><div class="t"><h3>Snow park</h3><p>Fatima Al Zaabi · Al Ain</p><p>AED 40,000,000</p></div><div class="s"><span class="mono">E7-20261008-5D1E90</span><span>Anita · 2d</span></div></div>
+<div class="card"><div class="t"><h3>Indoor play zone</h3><p>Karthik S · Bengaluru</p><p>INR 1.2 Cr</p></div><div class="s"><span class="mono">E7-20260930-B7F250</span><span>Joel · 5d</span></div></div>
+</section>
+<section class="col c-quo"><h2>Quoted <span>2</span></h2>
+<div class="card"><div class="t"><h3>Water park</h3><p>Priya Nair · Kochi</p><p>INR 18 Cr</p></div><div class="s"><span class="mono">E7-20260827-9E03D2</span><span>Joel · 3w</span></div></div>
+</section>
+<section class="col c-clo"><h2>Closed <span>14</span></h2>
+<div class="card"><div class="t"><h3>Children's playground</h3><p>Priya Nair · Coimbatore</p><p>INR 35 L</p></div><div class="s"><span class="mono">E7-20260618-4C91A7</span><span>Jun</span></div></div>
+</section>
+</div>
+<aside class="sheet"><div class="mono">E7-20261009-2A6E18 · 9 Oct</div><h2>Dinosaur / animatronic park</h2><p>Priya Nair · +91 98470 21536</p>
+<span class="btn pri">WhatsApp (preferred)</span><span class="btn">Call</span><span class="btn">Email</span>
+<dl><div><dt>Budget</dt><dd>AED 9,000,000</dd></div><div><dt>Location</dt><dd>Ras Al Khaimah, UAE</dd></div><div><dt>Timeline</dt><dd>More than a year away</dd></div><div><dt>Site area</dt><dd>4 hectares</dd></div></dl>
+<div class="sel2">Status: Open ▾</div>
+<div class="note">Early-stage idea with a partner in the UAE. We have the land and want 20–25 animatronics with a walking trail.</div>
+</aside>
+</main></body></html>

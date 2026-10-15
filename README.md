@@ -1,52 +1,83 @@
 # E7 Internal
 
-Staff web app for E7 Entertainments, to live at `internal.e7entertainments.com`. It shows park project requests
-raised from the E7 Parks mobile app, the KPIs across them, and lets staff update each request's status.
+Staff web app for E7 Entertainments at `internal.e7entertainments.com`. Its first job is managing the park project
+requests clients raise in the E7 Parks mobile app: a waiting-time inbox (oldest unanswered request on top), the full
+request with one-click email / call / WhatsApp, status changes with a history of who changed what, KPIs, and staff
+account management.
 
-This repo holds only the web app. The data comes from the E7 Parks server (`server/` in the `e7-parks` project,
-hosted on Railway), which this app calls over JSON.
+This repo holds only the web app. All data comes from the E7 Parks server (`server/` in the `e7-parks` repo, on
+Railway at `api.e7entertainments.com`).
 
-## API
+- Next.js 16 (App Router), deployed on Vercel. No database of its own.
+- The API token lives in an httpOnly cookie (`e7_session`, 12 hours); every API call is made server-side, so the
+  browser never sees the token or calls the API directly.
+- Designed with the impeccable skill (`.claude/skills/impeccable`). Product context is in `PRODUCT.md`, the visual
+  system in `DESIGN.md`, and the request workspace's direction in `.impeccable/surfaces/`.
 
-Base URL: `https://api.e7entertainments.com/api/staff`
-(until that domain is live: `https://e7-parks-server-production.up.railway.app/api/staff`)
+## Run it
 
-Requests and responses are JSON. Calls from a browser on any origin are allowed (CORS is open; access is
-controlled by the token, not cookies).
+Needs Node 20.9+ and the E7 Parks server running (see the `e7-parks` README).
+
+```sh
+cp .env.example .env.local   # E7_API_URL=http://localhost:4000/api/staff
+npm install
+npm run dev                  # http://localhost:3000
+```
+
+### First sign-in
+
+1. Sign in with the server's built-in admin: `ADMIN_USER` in the email field and `ADMIN_PASSWORD`.
+2. Open **Team** and add yourself as an admin, then everyone else.
+3. Sign out and back in with your own account, so status changes carry your name.
+
+## Configuration
+
+| Variable | Purpose |
+| --- | --- |
+| `E7_API_URL` | The staff API base, e.g. `https://api.e7entertainments.com/api/staff`. Server-side only. |
+| `DISPLAY_TIME_ZONE` | IANA zone for displayed dates. Defaults to `Asia/Kolkata`. |
+
+## Deploying
+
+Vercel project `e7-internal`, framework Next.js, with `E7_API_URL` set for Production and Preview. Add the domain
+`internal.e7entertainments.com` to the project and point its DNS record (GoDaddy) at Vercel as the dashboard shows.
+
+## Staff API
+
+Base URL: `https://api.e7entertainments.com/api/staff`. JSON in and out. Errors are
+`{ "error": "Human-readable message", "code": "OPTIONAL_CODE" }` with a matching status (`400` invalid input, `401`
+not signed in, `403` not allowed, `404` not found, `409` conflict, `429` rate limited, `500` server fault).
 
 ### Signing in
 
 ```http
 POST /login
-Content-Type: application/json
-
-{ "username": "admin", "password": "…" }
+{ "email": "anita@e7entertainments.com", "password": "…" }
 ```
 
 ```json
-{ "token": "eyJ…", "username": "admin" }
+{ "token": "eyJ…", "staff": { "id": 1, "name": "Anita Rao", "email": "anita@e7entertainments.com", "role": "admin", "builtin": false } }
 ```
 
-The username and password are the server's `ADMIN_USER` / `ADMIN_PASSWORD`. The token lasts 12 hours. Send it on
-every other call:
-
-```http
-Authorization: Bearer <token>
-```
-
-A missing or expired token gets `401` with `"code": "UNAUTHENTICATED"`; send the user back to the sign-in screen.
-Login is rate limited (40 attempts per 15 minutes per IP, `429`).
+Send the token on every other call as `Authorization: Bearer <token>`. It lasts 12 hours and stops working at once
+if the account is disabled or its password is reset or changed. The built-in admin signs in with `ADMIN_USER` as
+the email (`username` is still accepted for older clients) and gets `"builtin": true`, `"id": null`. Login is rate
+limited (40 attempts per 15 minutes per IP).
 
 ### Endpoints
 
-| Method | Path | What it does |
-| --- | --- | --- |
-| `GET` | `/me` | `{ "username": "admin" }`. Use it to check a stored token still works. |
-| `GET` | `/catalog` | Keys and display labels for park types, timelines, contact methods, currencies and statuses. |
-| `GET` | `/tickets` | All requests, newest first. Add `?status=open` (or `in_review`, `quoted`, `closed`) to filter. |
-| `GET` | `/tickets/:id` | One request. |
-| `PATCH` | `/tickets/:id` | Body `{ "status": "quoted" }`. Returns the updated request. |
-| `GET` | `/kpis` | Counts and totals across all requests. |
+| Method | Path | Who | What it does |
+| --- | --- | --- | --- |
+| `GET` | `/me` | anyone | `{ staff }` for the signed-in person. |
+| `POST` | `/me/password` | staff | `{ currentPassword, newPassword }` (10–72 chars). Returns a new `{ token }`; other sessions end. |
+| `GET` | `/catalog` | anyone | Labels for park types, timelines, contact methods, currencies, statuses and roles. |
+| `GET` | `/tickets` | anyone | All requests, newest first. `?status=open` (or `in_review`, `quoted`, `closed`) filters. |
+| `GET` | `/tickets/:id` | anyone | One request, with `history`. |
+| `PATCH` | `/tickets/:id` | anyone | `{ "status": "quoted" }`. Recorded in history under the signed-in person. |
+| `GET` | `/kpis` | anyone | Counts and totals across all requests. |
+| `GET` | `/team` | admin | All staff accounts. |
+| `POST` | `/team` | admin | `{ name, email, role, password }` creates an account (`role` is `admin` or `staff`). |
+| `PATCH` | `/team/:id` | admin | Any of `{ name, role, active, password }`. Resetting the password or disabling signs them out everywhere. Admins can't disable or demote themselves. |
 
 ### A request (ticket)
 
@@ -63,46 +94,23 @@ Login is rate limited (40 attempts per 15 minutes per IP, `429`).
   "timeline": "12_plus_months",
   "contactMethod": "whatsapp",
   "notes": "Early-stage idea with a partner in the UAE…",
-  "status": "open",
+  "status": "in_review",
   "emailSent": true,
   "createdAt": "2026-10-09T06:28:53.000Z",
-  "requester": { "id": 3, "name": "Priya Nair", "email": "priya.nair@lakeviewresorts.example", "phone": "+91 98470 21536" }
+  "statusChangedAt": "2026-10-15T12:31:17.496Z",
+  "statusChangedBy": "Anita Rao",
+  "requester": { "id": 3, "name": "Priya Nair", "email": "priya.nair@lakeviewresorts.example", "phone": "+91 98470 21536" },
+  "history": [{ "by": "Anita Rao", "staffId": 1, "from": "open", "to": "in_review", "at": "2026-10-15T12:31:17.496Z" }]
 }
 ```
 
-`siteArea`, `expectedVisitors` and `notes` can be `null`. `parkTypes`, `timeline`, `contactMethod` and `status`
-hold keys; look up their labels in `/catalog`.
-
-### Statuses
-
-`open` → `in_review` → `quoted` → `closed`. Any status can be set from any other. The client sees the new status
-in the mobile app the next time their requests load.
+`history` (newest first) is only on `GET`/`PATCH /tickets/:id`. `siteArea`, `expectedVisitors`, `notes`,
+`statusChangedAt` and `statusChangedBy` can be `null`. Statuses go `open` → `in_review` → `quoted` → `closed`, and
+any status can be set from any other; the client sees it in the mobile app the next time their requests load.
 
 ### KPIs
 
-```json
-{
-  "generatedAt": "2026-10-13T15:06:41.237Z",
-  "totalTickets": 4,
-  "ticketsLast7Days": 1,
-  "ticketsLast30Days": 2,
-  "openOlderThan7Days": 0,
-  "verifiedClients": 1,
-  "byStatus": { "open": 1, "in_review": 1, "quoted": 1, "closed": 1 },
-  "byParkType": { "water_park": 1, "dinosaur_park": 1, "…": 0 },
-  "byTimeline": { "asap": 1, "…": 0 },
-  "byContactMethod": { "email": 1, "phone": 1, "whatsapp": 2 },
-  "byCurrency": [{ "currency": "INR", "count": 3, "totalBudget": 195500000 }],
-  "perWeek": [{ "weekEnding": "2026-10-13T15:06:41.237Z", "count": 1 }]
-}
-```
-
-- Every `by…` object lists all keys, including those at zero.
-- `byCurrency` keeps budgets per currency; they are never added across currencies.
-- `perWeek` is the last 12 weeks, oldest first. The last entry is the 7 days ending at `generatedAt`.
-- `openOlderThan7Days` counts requests still `open` more than a week after they were raised.
-
-### Errors
-
-Errors come back as `{ "error": "Human-readable message", "code": "OPTIONAL_CODE" }` with a matching HTTP status
-(`400` invalid input, `401` not signed in, `404` not found, `429` rate limited, `500` server fault).
+`totalTickets`, `ticketsLast7Days`, `ticketsLast30Days`, `openOlderThan7Days`, `verifiedClients`, zero-filled
+`byStatus` / `byParkType` / `byTimeline` / `byContactMethod`, `byCurrency` (budgets per currency, never summed
+across currencies) and `perWeek` (last 12 weeks, oldest first, the last entry being the 7 days ending at
+`generatedAt`).

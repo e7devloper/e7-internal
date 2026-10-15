@@ -1,0 +1,60 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>One-at-a-time queue</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0}
+body{width:1440px;height:900px;overflow:hidden;background:#f4f7fb;font:14px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif;color:#3d4c5e;display:grid;grid-template-columns:220px 1fr 360px}
+h1,h2,h3{font-family:Montserrat,sans-serif;color:#1f3864}
+.rail{background:#1f3864;color:#c9d4e8;padding:22px 14px;display:flex;flex-direction:column;gap:4px}
+.logo{font:700 18px Montserrat;color:#fff;margin:0 8px 24px;display:flex;gap:10px;align-items:center}
+.logo b{background:#f0a821;color:#1f3864;border-radius:6px;padding:2px 7px}
+.rail a{padding:10px 12px;border-radius:8px}.rail a.on{background:#2c4a80;color:#fff}
+.rail .me{margin-top:auto;padding:12px;font-size:13px}
+main{padding:36px 40px}
+.kick{font:600 12px Montserrat;letter-spacing:.05em;text-transform:uppercase;color:#a8201a}
+.tk{display:grid;grid-template-columns:1fr 210px;background:#fff;border:1px solid #e1e8f0;border-radius:16px;margin-top:12px;box-shadow:0 8px 24px rgba(31,56,100,.08)}
+.tk .body{padding:30px 34px}.tk h1{font-size:30px;margin:4px 0 6px}
+.tk .stub{border-left:3px dashed #cfd9e6;padding:30px 20px;text-align:center;background:#fbfcfe;border-radius:0 16px 16px 0}
+.stub .big{font:700 44px Montserrat;color:#a8201a;line-height:1}
+.stub small{display:block;color:#5a6a80;margin-bottom:18px}
+.mono{font-family:ui-monospace,monospace;color:#5a6a80;font-size:13px}
+.pill{display:inline-block;font-size:12px;font-weight:600;border-radius:999px;padding:3px 12px;background:#fdf1d7;color:#6b4a00}
+dl{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px;border-top:1px solid #e1e8f0;padding-top:22px}
+dt{font-size:12px;color:#5a6a80}dd{font-weight:600;color:#1f3864;font-size:15px}
+.note{margin-top:22px;background:#f4f7fb;border-radius:10px;padding:14px 16px}
+.acts{display:flex;gap:10px;margin-top:26px}
+.btn{border-radius:10px;padding:12px 20px;font:700 14px Montserrat;border:1px solid #1f3864;color:#1f3864;background:#fff}
+.btn.pri{background:#f0a821;border-color:#f0a821}
+.move{display:flex;gap:10px;margin-top:22px;align-items:center}
+.move span{color:#5a6a80}
+.q{background:#fff;border-left:1px solid #e1e8f0;padding:28px 20px}
+.q h2{font-size:16px;margin-bottom:14px;display:flex;justify-content:space-between}.q h2 span{font:600 13px system-ui;color:#5a6a80}
+.it{border:1px solid #e1e8f0;border-radius:10px;padding:10px 12px;margin-bottom:8px;display:flex;justify-content:space-between}
+.it h3{font-size:14px}.it p{font-size:12.5px;color:#5a6a80}.it b{font:700 14px Montserrat;color:#1f3864}.it b.late{color:#a8201a}
+.it.cur{border-color:#1f3864;box-shadow:0 0 0 1px #1f3864}
+</style></head><body>
+<aside class="rail"><div class="logo"><b>E7</b>Internal</div><a class="on">Queue</a><a>All requests</a><a>Overview</a><a>Team</a><div class="me">Anita Rao<br>Sign out</div></aside>
+<main>
+<div class="kick">Longest waiting · 1 of 11 needing a reply</div>
+<article class="tk"><div class="body">
+<div class="mono">E7-20261009-2A6E18 · raised 9 Oct, 11:58</div>
+<h1>Dinosaur / animatronic park</h1>
+<p>Priya Nair · priya.nair@lakeviewresorts.example · +91 98470 21536</p>
+<dl><div><dt>Budget</dt><dd>AED 9,000,000</dd></div><div><dt>Location</dt><dd>Ras Al Khaimah, UAE</dd></div><div><dt>Timeline</dt><dd>More than a year away</dd></div>
+<div><dt>Site area</dt><dd>4 hectares</dd></div><div><dt>Daily visitors</dt><dd>1,800</dd></div><div><dt>Contact by</dt><dd>WhatsApp</dd></div></dl>
+<div class="note">Early-stage idea with a partner in the UAE. We have the land and want 20–25 animatronics with a walking trail.</div>
+<div class="acts"><span class="btn pri">WhatsApp Priya</span><span class="btn">Call</span><span class="btn">Email</span></div>
+<div class="move"><span>Then move it to</span><span class="btn">In review</span><span class="btn">Quoted</span><span class="btn">Closed</span></div>
+</div>
+<div class="stub"><small>Waiting</small><div class="big">9d</div><small>since raised</small><span class="pill">Open</span></div>
+</article>
+</main>
+<aside class="q"><h2>Up next <span>10 more</span></h2>
+<div class="it cur"><div><h3>Dinosaur park</h3><p>Priya Nair · RAK</p></div><b class="late">9d</b></div>
+<div class="it"><div><h3>Water park</h3><p>Rohan Mehta · Pune</p></div><b class="late">8d</b></div>
+<div class="it"><div><h3>Snow park</h3><p>Fatima Al Zaabi · Al Ain</p></div><b class="late">7d</b></div>
+<div class="it"><div><h3>Indoor play zone</h3><p>Karthik S · Bengaluru</p></div><b>4d</b></div>
+<div class="it"><div><h3>Arcade / VR zone</h3><p>Daniel Okafor · Lagos</p></div><b>2d</b></div>
+<div class="it"><div><h3>Children's playground</h3><p>Meera Iyer · Coimbatore</p></div><b>3h</b></div>
+</aside>
+</body></html>

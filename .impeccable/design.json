@@ -1,0 +1,591 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-15T13:05:10+00:00",
+  "title": "Design System: E7 Internal",
+  "extensions": {
+    "colorMeta": {
+      "heading": {
+        "role": "primary",
+        "displayName": "E7 Navy",
+        "canonical": "#1f3864",
+        "cssVar": "--heading",
+        "tonalRamp": [
+          "#00052d",
+          "#0b234d",
+          "#27416e",
+          "#466191",
+          "#6683b5",
+          "#87a6da",
+          "#b7caea",
+          "#dcf0ff"
+        ]
+      },
+      "header-raised": {
+        "role": "primary",
+        "displayName": "Raised Navy",
+        "canonical": "#2c4a80",
+        "cssVar": "--header-raised",
+        "tonalRamp": [
+          "#000233",
+          "#062153",
+          "#234075",
+          "#416098",
+          "#6182bd",
+          "#83a5e3",
+          "#b4caf0",
+          "#d9f0ff"
+        ]
+      },
+      "action": {
+        "role": "secondary",
+        "displayName": "Marquee Gold",
+        "canonical": "#f0a821",
+        "cssVar": "--action",
+        "tonalRamp": [
+          "#2a0000",
+          "#4c0800",
+          "#6e2d00",
+          "#924f00",
+          "#b67100",
+          "#dc9500",
+          "#ecc182",
+          "#ffe7a7"
+        ]
+      },
+      "action-hover": {
+        "role": "secondary",
+        "displayName": "Deep Gold",
+        "canonical": "#e29a12",
+        "cssVar": "--action-hover",
+        "tonalRamp": [
+          "#2a0000",
+          "#4c0800",
+          "#6e2d00",
+          "#924f00",
+          "#b67100",
+          "#dc9400",
+          "#edc185",
+          "#ffe6a9"
+        ]
+      },
+      "action-soft": {
+        "role": "secondary",
+        "displayName": "Gold Wash",
+        "canonical": "#fff6e2",
+        "cssVar": "--action-soft",
+        "tonalRamp": [
+          "#100a01",
+          "#2b2415",
+          "#484131",
+          "#68604f",
+          "#8a8270",
+          "#ada492",
+          "#cec9bd",
+          "#f3eee2"
+        ]
+      },
+      "ground": {
+        "role": "neutral",
+        "displayName": "Pale Ground",
+        "canonical": "#f4f7fb",
+        "cssVar": "--ground",
+        "tonalRamp": [
+          "#090b0e",
+          "#232528",
+          "#404245",
+          "#5f6165",
+          "#808286",
+          "#a2a5a9",
+          "#c7c9cb",
+          "#edeff1"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Panel White",
+        "canonical": "#ffffff",
+        "cssVar": "--surface",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      },
+      "surface-alt": {
+        "role": "neutral",
+        "displayName": "Cool Mist",
+        "canonical": "#e8eef7",
+        "cssVar": "--surface-alt",
+        "tonalRamp": [
+          "#080b11",
+          "#21252c",
+          "#3e4249",
+          "#5c6269",
+          "#7d838b",
+          "#a0a5ae",
+          "#c6c9cf",
+          "#ebeff4"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#e1e8f0",
+        "cssVar": "--line",
+        "tonalRamp": [
+          "#070c11",
+          "#20262b",
+          "#3d4349",
+          "#5c6269",
+          "#7d838a",
+          "#9fa6ad",
+          "#c5cace",
+          "#ebeff4"
+        ]
+      },
+      "perf": {
+        "role": "neutral",
+        "displayName": "Perforation Blue",
+        "canonical": "#cfd9e6",
+        "cssVar": "--perf",
+        "tonalRamp": [
+          "#060c14",
+          "#1e262f",
+          "#3b434d",
+          "#59626d",
+          "#7a838f",
+          "#9ca6b2",
+          "#c4cad1",
+          "#e9eff7"
+        ]
+      },
+      "input-border": {
+        "role": "neutral",
+        "displayName": "Field Stroke",
+        "canonical": "#7f8ea5",
+        "cssVar": "--input-border",
+        "tonalRamp": [
+          "#030b1b",
+          "#192538",
+          "#364357",
+          "#546278",
+          "#75839a",
+          "#97a6be",
+          "#c0cad9",
+          "#e5efff"
+        ]
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "Slate Ink",
+        "canonical": "#3d4c5e",
+        "cssVar": "--text",
+        "tonalRamp": [
+          "#020b1a",
+          "#182636",
+          "#354355",
+          "#536376",
+          "#748498",
+          "#96a7bc",
+          "#c0cad7",
+          "#e5f0fd"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Slate Muted",
+        "canonical": "#5a6a80",
+        "cssVar": "--muted",
+        "tonalRamp": [
+          "#020b1c",
+          "#182638",
+          "#344357",
+          "#536278",
+          "#73849b",
+          "#95a7be",
+          "#bfcad9",
+          "#e4f0ff"
+        ]
+      },
+      "on-header-muted": {
+        "role": "neutral",
+        "displayName": "Bar Mist",
+        "canonical": "#c9d4e8",
+        "cssVar": "--on-header-muted",
+        "tonalRamp": [
+          "#050b18",
+          "#1d2534",
+          "#394252",
+          "#586273",
+          "#798395",
+          "#9ba5b9",
+          "#c3c9d5",
+          "#e8effb"
+        ]
+      },
+      "danger": {
+        "role": "status",
+        "displayName": "Overdue Red",
+        "canonical": "#a8201a",
+        "cssVar": "--danger",
+        "tonalRamp": [
+          "#390000",
+          "#600000",
+          "#870000",
+          "#ae2720",
+          "#d64f42",
+          "#ff7464",
+          "#ffafa3",
+          "#ffd4c7"
+        ]
+      },
+      "danger-soft": {
+        "role": "status",
+        "displayName": "Red Wash",
+        "canonical": "#fcebea",
+        "cssVar": "--danger-soft",
+        "tonalRamp": [
+          "#120808",
+          "#2e2221",
+          "#4c3e3e",
+          "#6c5d5c",
+          "#8d7e7d",
+          "#b1a1a0",
+          "#d0c6c6",
+          "#f6eceb"
+        ]
+      },
+      "success": {
+        "role": "status",
+        "displayName": "Quoted Green",
+        "canonical": "#14613a",
+        "cssVar": "--success",
+        "tonalRamp": [
+          "#001500",
+          "#00310e",
+          "#00502b",
+          "#297149",
+          "#4d9469",
+          "#70b78b",
+          "#acd5b9",
+          "#d0fbde"
+        ]
+      },
+      "success-soft": {
+        "role": "status",
+        "displayName": "Green Wash",
+        "canonical": "#ddf3e6",
+        "cssVar": "--success-soft",
+        "tonalRamp": [
+          "#020f07",
+          "#182920",
+          "#35473d",
+          "#53675c",
+          "#74887c",
+          "#96ab9f",
+          "#c0cdc5",
+          "#e5f2ea"
+        ]
+      },
+      "open-bg": {
+        "role": "status",
+        "displayName": "Amber Wash",
+        "canonical": "#fdf1d7",
+        "cssVar": "--open-bg",
+        "tonalRamp": [
+          "#120a00",
+          "#2d240f",
+          "#4b412b",
+          "#6a604a",
+          "#8c816a",
+          "#afa48c",
+          "#cfc8b9",
+          "#f5eede"
+        ]
+      },
+      "open-fg": {
+        "role": "status",
+        "displayName": "Open Amber",
+        "canonical": "#6b4a00",
+        "cssVar": "--open-fg",
+        "tonalRamp": [
+          "#1d0200",
+          "#3b1d00",
+          "#5b3b00",
+          "#7c5a1a",
+          "#9f7c3f",
+          "#c39f62",
+          "#dcc6a2",
+          "#ffebc6"
+        ]
+      },
+      "review-bg": {
+        "role": "status",
+        "displayName": "Review Blue",
+        "canonical": "#e3ecfb",
+        "cssVar": "--review-bg",
+        "tonalRamp": [
+          "#060b15",
+          "#1f2530",
+          "#3b424e",
+          "#5a626e",
+          "#7b8390",
+          "#9da6b4",
+          "#c4c9d2",
+          "#e9eff8"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Sign-in brand panel title only."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Request title in the detail pane; page titles at 24px."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Section, form-card, stub and chart headings."
+      },
+      "figure": {
+        "displayName": "Figure",
+        "purpose": "KPI counts."
+      },
+      "stub-age": {
+        "displayName": "Stub Age",
+        "purpose": "Wait age on a ticket stub."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "All button labels."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Everything read; notes capped at 75ch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Field labels."
+      },
+      "group-label": {
+        "displayName": "Group Label",
+        "purpose": "Uppercase list group headings and table column headers."
+      },
+      "mono": {
+        "displayName": "Mono",
+        "purpose": "Request references only."
+      }
+    },
+    "shadows": [
+      {
+        "name": "panel-ambient",
+        "value": "0 1px 2px rgb(31 56 100 / 0.04), 0 4px 16px rgb(31 56 100 / 0.05)",
+        "purpose": "Every panel; separates white from the pale ground without lifting."
+      },
+      {
+        "name": "selected-ring",
+        "value": "inset 0 0 0 1px #1f3864",
+        "purpose": "The open request stub, with a navy border."
+      },
+      {
+        "name": "kpi-current-ring",
+        "value": "0 0 0 2px #1f3864",
+        "purpose": "The KPI tile whose filter is active."
+      },
+      {
+        "name": "focus-halo",
+        "value": "0 0 0 3px rgb(240 168 33 / 0.55)",
+        "purpose": "Input and select focus, with a navy border."
+      }
+    ],
+    "focus": {
+      "outline": "3px solid #f0a821",
+      "outlineOffset": "2px",
+      "purpose": "All other focusable elements."
+    },
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "All hover, focus and selection transitions."
+      },
+      {
+        "name": "duration-state",
+        "value": "160ms",
+        "purpose": "Background, border, colour and box-shadow changes; 1px press nudge on buttons."
+      },
+      {
+        "name": "spin",
+        "value": "800ms linear infinite",
+        "purpose": "Loading spinner only."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "0ms",
+        "purpose": "All transitions and animations under prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "phone",
+        "value": "560px"
+      },
+      {
+        "name": "team-stack",
+        "value": "760px"
+      },
+      {
+        "name": "single-pane",
+        "value": "960px"
+      },
+      {
+        "name": "facts-two",
+        "value": "1180px"
+      },
+      {
+        "name": "container-max",
+        "value": "1600px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Gold fill, navy label; the one action per view, such as the preferred contact method.",
+      "html": "<button class=\"ds-btn ds-btn-primary\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z\"/></svg>Call (preferred)</button>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;padding:0 18px;border-radius:10px;border:1px solid var(--heading,#1f3864);background:var(--surface,#fff);color:var(--heading,#1f3864);font-family: var(--font-display, 'Montserrat', system-ui, sans-serif);font-weight:700;font-size:14px;line-height:1;cursor:pointer;transition:background-color 160ms cubic-bezier(0.16,1,0.3,1),border-color 160ms cubic-bezier(0.16,1,0.3,1),transform 160ms cubic-bezier(0.16,1,0.3,1);}.ds-btn:active{transform:translateY(1px);}.ds-btn:focus-visible{outline:3px solid var(--action,#f0a821);outline-offset:2px;}.ds-btn-primary{background:var(--action,#f0a821);border-color:var(--action,#f0a821);color:var(--heading,#1f3864);}.ds-btn-primary:hover{background:var(--action-hover,#e29a12);border-color:var(--action-hover,#e29a12);}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "White with a navy outline; the default button.",
+      "html": "<button class=\"ds-btn\">Email</button>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;padding:0 18px;border-radius:10px;border:1px solid var(--heading,#1f3864);background:var(--surface,#fff);color:var(--heading,#1f3864);font-family: var(--font-display, 'Montserrat', system-ui, sans-serif);font-weight:700;font-size:14px;line-height:1;cursor:pointer;transition:background-color 160ms cubic-bezier(0.16,1,0.3,1),border-color 160ms cubic-bezier(0.16,1,0.3,1),transform 160ms cubic-bezier(0.16,1,0.3,1);}.ds-btn:active{transform:translateY(1px);}.ds-btn:focus-visible{outline:3px solid var(--action,#f0a821);outline-offset:2px;}.ds-btn:hover{background:var(--surface-alt,#e8eef7);}"
+    },
+    {
+      "name": "Danger Button",
+      "kind": "button",
+      "refersTo": "button-danger",
+      "description": "Destructive actions such as disabling an account.",
+      "html": "<button class=\"ds-btn ds-btn-danger\">Disable</button>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;padding:0 18px;border-radius:10px;border:1px solid var(--heading,#1f3864);background:var(--surface,#fff);color:var(--heading,#1f3864);font-family: var(--font-display, 'Montserrat', system-ui, sans-serif);font-weight:700;font-size:14px;line-height:1;cursor:pointer;transition:background-color 160ms cubic-bezier(0.16,1,0.3,1),border-color 160ms cubic-bezier(0.16,1,0.3,1),transform 160ms cubic-bezier(0.16,1,0.3,1);}.ds-btn:active{transform:translateY(1px);}.ds-btn:focus-visible{outline:3px solid var(--action,#f0a821);outline-offset:2px;}.ds-btn-danger{border-color:var(--danger,#a8201a);color:var(--danger,#a8201a);}.ds-btn-danger:hover{background:var(--danger-soft,#fcebea);}"
+    },
+    {
+      "name": "Search Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Field Stroke border, navy focus border with a gold halo.",
+      "html": "<label class=\"ds-search\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><path d=\"m21 21-4.3-4.3\"/></svg><input class=\"ds-input\" placeholder=\"Search name, reference, location\"></label>",
+      "css": ".ds-search{position:relative;display:block;max-width:360px;}.ds-search svg{position:absolute;left:11px;top:50%;transform:translateY(-50%);color:var(--muted,#5a6a80);pointer-events:none;}.ds-input{width:100%;min-height:42px;padding:0 12px 0 36px;border:1px solid var(--input-border,#7f8ea5);border-radius:8px;background:var(--surface,#fff);color:var(--heading,#1f3864);font:15px/1.5 system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;transition:border-color 160ms cubic-bezier(0.16,1,0.3,1),box-shadow 160ms cubic-bezier(0.16,1,0.3,1);}.ds-input::placeholder{color:#5f6e85;}.ds-input:hover{border-color:var(--heading,#1f3864);}.ds-input:focus-visible{outline:none;border-color:var(--heading,#1f3864);box-shadow:0 0 0 3px rgb(240 168 33 / 0.55);}"
+    },
+    {
+      "name": "Top Bar Navigation",
+      "kind": "nav",
+      "refersTo": "topbar",
+      "description": "Sticky 60px navy bar; current page in a Raised Navy pill.",
+      "html": "<nav class=\"ds-bar\"><span class=\"ds-brand\">E7 Internal</span><a href=\"#\" aria-current=\"page\">Requests</a><a href=\"#\">Overview</a><a href=\"#\">Team</a><span class=\"ds-avatar\">RT</span></nav>",
+      "css": ".ds-bar{display:flex;align-items:center;gap:4px;height:60px;padding:0 28px;background:var(--heading,#1f3864);}.ds-brand{color:#fff;font-family: var(--font-display, 'Montserrat', system-ui, sans-serif);font-weight:700;font-size:17px;margin-right:24px;}.ds-bar a{display:inline-flex;align-items:center;height:38px;padding:0 14px;border-radius:8px;color:var(--on-header-muted,#c9d4e8);text-decoration:none;font:600 15px system-ui,sans-serif;transition:background-color 160ms cubic-bezier(0.16,1,0.3,1),color 160ms cubic-bezier(0.16,1,0.3,1);}.ds-bar a:hover{color:#fff;background:rgb(255 255 255 / 0.08);}.ds-bar a[aria-current='page']{background:var(--header-raised,#2c4a80);color:#fff;}.ds-bar a:focus-visible{outline:3px solid var(--action,#f0a821);outline-offset:2px;}.ds-avatar{margin-left:auto;width:28px;height:28px;border-radius:50%;background:var(--action,#f0a821);color:var(--heading,#1f3864);display:grid;place-items:center;font-family: var(--font-display, 'Montserrat', system-ui, sans-serif);font-weight:700;font-size:12px;}"
+    },
+    {
+      "name": "Status Pills",
+      "kind": "chip",
+      "refersTo": "pill-open",
+      "description": "The four request statuses as soft tinted pills.",
+      "html": "<span class=\"ds-pill ds-open\">Open</span> <span class=\"ds-pill ds-review\">In review</span> <span class=\"ds-pill ds-quoted\">Quoted</span> <span class=\"ds-pill ds-closed\">Closed</span>",
+      "css": ".ds-pill{display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;font:600 12px system-ui,sans-serif;white-space:nowrap;}.ds-open{background:#fdf1d7;color:#6b4a00;}.ds-review{background:#e3ecfb;color:#1f3864;}.ds-quoted{background:#ddf3e6;color:#14613a;}.ds-closed{background:#e8eef7;color:#5a6a80;}"
+    },
+    {
+      "name": "KPI Tile",
+      "kind": "card",
+      "refersTo": "kpi-tile-warn",
+      "description": "Filter tiles; the overdue tile is gold-washed while its count is above zero.",
+      "html": "<div class=\"ds-kpis\"><a class=\"ds-kpi ds-kpi-warn\" href=\"#\">Open over 7 days<b>4</b></a><a class=\"ds-kpi\" href=\"#\" aria-current=\"true\">Needs a reply<b>12</b></a></div>",
+      "css": ".ds-kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;max-width:480px;}.ds-kpi{display:block;padding:12px 18px 14px;background:var(--surface,#fff);border:1px solid var(--line,#e1e8f0);border-radius:12px;text-decoration:none;color:var(--muted,#5a6a80);font:13px system-ui,sans-serif;transition:border-color 160ms cubic-bezier(0.16,1,0.3,1),box-shadow 160ms cubic-bezier(0.16,1,0.3,1);}.ds-kpi:hover{border-color:var(--input-border,#7f8ea5);}.ds-kpi b{display:block;font-family: var(--font-display, 'Montserrat', system-ui, sans-serif);font-weight:700;font-size:28px;line-height:1.15;color:var(--heading,#1f3864);font-variant-numeric:tabular-nums;margin-top:2px;}.ds-kpi-warn{background:var(--action-soft,#fff6e2);border-color:var(--action,#f0a821);}.ds-kpi-warn:hover{border-color:var(--action-hover,#e29a12);}.ds-kpi[aria-current='true']{box-shadow:0 0 0 2px var(--heading,#1f3864);border-color:var(--heading,#1f3864);}.ds-kpi:focus-visible{outline:3px solid var(--action,#f0a821);outline-offset:2px;}"
+    },
+    {
+      "name": "Ticket Stub Row",
+      "kind": "custom",
+      "refersTo": "stub-row",
+      "description": "Signature request row: details, a dashed perforation with notches, and a stub carrying the wait age and status.",
+      "html": "<a class=\"ds-stub\" href=\"#\"><div class=\"ds-stub-main\"><h3>Water park</h3><p>Requester · Location · Budget</p></div><div class=\"ds-stub-side\"><span class=\"ds-age ds-late\">9d</span><span class=\"ds-pill ds-open\">Open</span></div></a>",
+      "css": ".ds-stub{display:grid;grid-template-columns:minmax(0,1fr) 96px;max-width:480px;border:1px solid var(--line,#e1e8f0);border-radius:10px;background:var(--surface,#fff);text-decoration:none;color:var(--text,#3d4c5e);position:relative;transition:border-color 160ms cubic-bezier(0.16,1,0.3,1),box-shadow 160ms cubic-bezier(0.16,1,0.3,1);}.ds-stub:hover{border-color:var(--input-border,#7f8ea5);}.ds-stub:focus-visible{outline:3px solid var(--action,#f0a821);outline-offset:2px;}.ds-stub::before,.ds-stub::after{content:'';position:absolute;right:89px;width:12px;height:7px;background:var(--surface,#fff);border:1px solid var(--line,#e1e8f0);z-index:1;}.ds-stub::before{top:-1px;border-top-color:var(--surface,#fff);border-radius:0 0 7px 7px;}.ds-stub::after{bottom:-1px;border-bottom-color:var(--surface,#fff);border-radius:7px 7px 0 0;}.ds-stub-main{padding:11px 14px;min-width:0;}.ds-stub-main h3{margin:0;font-family: var(--font-display, 'Montserrat', system-ui, sans-serif);font-weight:700;font-size:14.5px;line-height:1.3;color:var(--heading,#1f3864);}.ds-stub-main p{margin:3px 0 0;font:13px system-ui,sans-serif;color:var(--muted,#5a6a80);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}.ds-stub-side{border-left:2px dashed var(--perf,#cfd9e6);padding:9px 6px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;}.ds-age{font-family: var(--font-display, 'Montserrat', system-ui, sans-serif);font-weight:700;font-size:16px;line-height:1;color:var(--heading,#1f3864);font-variant-numeric:tabular-nums;}.ds-late{color:var(--danger,#a8201a);}.ds-pill{display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;font:600 12px system-ui,sans-serif;}.ds-open{background:#fdf1d7;color:#6b4a00;}"
+    },
+    {
+      "name": "Segmented Status Control",
+      "kind": "custom",
+      "refersTo": "segmented-option-active",
+      "description": "Sets a request status; current option filled navy.",
+      "html": "<div class=\"ds-seg\"><button>Open</button><button aria-pressed=\"true\">In review</button><button>Quoted</button><button>Closed</button></div>",
+      "css": ".ds-seg{display:inline-flex;border:1px solid var(--heading,#1f3864);border-radius:10px;overflow:hidden;}.ds-seg button{min-height:42px;padding:0 18px;border:0;border-right:1px solid var(--heading,#1f3864);background:var(--surface,#fff);color:var(--heading,#1f3864);font:600 14px system-ui,sans-serif;cursor:pointer;transition:background-color 160ms cubic-bezier(0.16,1,0.3,1),color 160ms cubic-bezier(0.16,1,0.3,1);}.ds-seg button:last-child{border-right:0;}.ds-seg button:hover:not([aria-pressed='true']){background:var(--surface-alt,#e8eef7);}.ds-seg button[aria-pressed='true']{background:var(--heading,#1f3864);color:#fff;}.ds-seg button:focus-visible{outline:3px solid var(--action,#f0a821);outline-offset:-3px;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Ticket Counter",
+    "overview": "E7 Internal is a quiet desk tool that carries the E7 Parks brand into a staff workspace. A navy bar sits over a pale blue-grey ground; white panels with hairline edges hold the work. Every client request is drawn as a ticket stub: the details on the left, a dashed perforation, and a stub on the right carrying how long the client has waited and the request's status. The stub is the one ornamental idea in the system, and it is functional: it puts the wait age where the eye lands when scanning down a list.\n\nDensity is moderate and desk-first: 15px body type, 42px controls, panels with 20-32px of padding. Colour is used for state, not decoration. Gold is the single action colour and only ever appears as a fill with navy on it. Red appears only when a client has been waiting too long or something failed. The four request statuses each have a soft tinted pill, and that palette of pills is the only place several hues meet.\n\nMontserrat carries the brand in headings, buttons, numbers and ages; the system sans does the reading. Motion is a 160ms ease-out on hover and focus changes, and nothing else moves except the loading spinner. Reduced-motion users get zero-duration transitions.",
+    "keyCharacteristics": [
+      "Navy top bar and navy ink on a pale blue-grey ground, white hairline panels.",
+      "Gold as fill-only primary action, with navy text on it.",
+      "Requests as ticket stubs with the wait age on the stub.",
+      "Status shown as soft tinted pills: open amber, in review blue, quoted green, closed grey.",
+      "Montserrat for headings, buttons and figures; system sans for reading.",
+      "Flat panels with a faint navy-tinted ambient shadow; no lifted cards."
+    ],
+    "rules": [
+      {
+        "name": "The Gold Is a Fill Rule",
+        "body": "Gold never sets text or icons on a light surface; it reaches only about 1.9:1 on white. It appears as a fill with navy on it, as a border, or as the focus ring.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Gold Button Rule",
+        "body": "A view has at most one gold button: the one action the person most likely came to take. Everything else is a white button with a navy outline, or quiet.",
+        "section": "colors"
+      },
+      {
+        "name": "The Red Means Waiting Rule",
+        "body": "Red is reserved for overdue waits and failures. It never decorates, and no status pill is red.",
+        "section": "colors"
+      },
+      {
+        "name": "The Numbers Line Up Rule",
+        "body": "Every count, age, budget, date and table cell uses tabular figures so columns of numbers scan vertically.",
+        "section": "typography"
+      },
+      {
+        "name": "The Montserrat Is for Short Things Rule",
+        "body": "Montserrat sets headings, buttons, figures and ages. Sentences are always in the system sans.",
+        "section": "typography"
+      },
+      {
+        "name": "The Border Answers Rule",
+        "body": "Hover and selection change a border, never a shadow: Hairline at rest, Field Stroke on hover, navy with an inset 1px ring when selected or current.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** use Marquee Gold only as a fill, border or focus ring, with navy text on gold fills.",
+      "**Do** limit each view to one gold button: the preferred contact method in a request, Sign in on the sign-in page.",
+      "**Do** draw every request in a list as a ticket stub with its wait age on the stub.",
+      "**Do** use tabular figures for every number, age, budget and date.",
+      "**Do** keep panels flat with the Panel Ambient shadow and answer hover with a stronger border.",
+      "**Do** keep controls at 42px (34px small) so they work at phone width."
+    ],
+    "donts": [
+      "**Don't** set gold text or gold icons on white or Pale Ground.",
+      "**Don't** use red for anything other than overdue waits, errors and destructive actions.",
+      "**Don't** introduce new status hues; the four status tints are the full set.",
+      "**Don't** set sentences in Montserrat; it is for headings, buttons, figures and ages.",
+      "**Don't** lift cards with larger shadows on hover; depth stays constant."
+    ]
+  }
+}

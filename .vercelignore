@@ -1,0 +1,4 @@
+.claude
+.impeccable
+*.md
+!README.md
