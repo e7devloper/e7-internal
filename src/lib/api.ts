@@ -8,7 +8,9 @@ export const SESSION_COOKIE = 'e7_session';
 // Matches the API's 12-hour token lifetime.
 export const SESSION_MAX_AGE = 12 * 60 * 60;
 
-const API_URL = (process.env.E7_API_URL ?? 'http://localhost:4000/api/staff').replace(/\/+$/, '');
+// Defaults to the live API, so a deploy works without configuration. For local development set
+// E7_API_URL=http://localhost:4000/api/staff in .env.local.
+const API_URL = (process.env.E7_API_URL || 'https://api.e7entertainments.com/api/staff').replace(/\/+$/, '');
 
 export class ApiError extends Error {
   constructor(

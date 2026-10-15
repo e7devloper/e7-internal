@@ -34,7 +34,7 @@ npm run dev                  # http://localhost:3000
 
 | Variable | Purpose |
 | --- | --- |
-| `E7_API_URL` | The staff API base, e.g. `https://api.e7entertainments.com/api/staff`. Server-side only. |
+| `E7_API_URL` | The staff API base. Defaults to `https://api.e7entertainments.com/api/staff`; set it to `http://localhost:4000/api/staff` for local development. Server-side only. |
 | `DISPLAY_TIME_ZONE` | IANA zone for displayed dates. Defaults to `Asia/Kolkata`. |
 
 ## Deploying
